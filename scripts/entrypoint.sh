@@ -14,7 +14,7 @@ sed -i "s/REPLACE_SERVICE_ENDPOINT_HERE:REPLACE_SERVICE_PORT_HERE/${SERVICE_ENDP
   cfg:default.paths.logs=/var/log/grafana \
   cfg:default.paths.plugins=/var/lib/grafana/plugins \
   web.enable-gzip=true \
-  web.address=:: &
+  web.address=0.0.0.0 &
 
 # Keep the container running
 tail -f /dev/null
