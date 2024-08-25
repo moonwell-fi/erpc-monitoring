@@ -22,6 +22,7 @@ COPY grafana/dashboards/erpc.json /etc/grafana/provisioning/dashboards/erpc.json
 # Set up entrypoint script
 COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+RUN mkdir -p /etc/grafana/dashboards
 
 EXPOSE 3000 9090
 
