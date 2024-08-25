@@ -2,6 +2,8 @@
 
 # Replace placeholder values in Prometheus config
 sed -i "s/REPLACE_SERVICE_ENDPOINT_HERE:REPLACE_SERVICE_PORT_HERE/${SERVICE_ENDPOINT}:${SERVICE_PORT}/g" /etc/prometheus/prometheus.yml
+mkdir -p /prometheus/grafana
+ln -s /prometheus/grafana /var/lib/grafana
 
 # Start Prometheus
 /bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus &
